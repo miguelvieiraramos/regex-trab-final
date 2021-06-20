@@ -6,8 +6,9 @@ class SentenceValidation:
     regular_expressions = {
         'even-binary': '^([01]{2})*$',
         'twice-101': '(.*101){2}',
-        'starts-ends-with': '^01[01]*10$',
-        'any-binary-sequence': '^[01]*$'
+        'starts-with-00-and-ends-with-10': '^01[01]*10$',
+        'any-binary-sequence': '^[01]*$',
+        '0110-and-1001': '^(0110|1001)$'
     }
 
     def __init__(self):
@@ -22,15 +23,24 @@ class SentenceValidation:
 
 
 if __name__ == '__main__':
-    type, sentence = sys.argv[1:3]
+    if len(sys.argv) == 3:
+        regex_type, sentence = sys.argv[1:3]
 
-    if type in SentenceValidation.regular_expressions.keys():
-        sentence_validation = SentenceValidation()
-        sentence_validation.set_type(type)
-        if sentence_validation.is_valid(sentence):
-            print(f'{sentence} is valid.')
-            sys.exit(0)
-        print(f'{sentence} is invalid')
-    else:
+        if regex_type in SentenceValidation.regular_expressions.keys():
+            sentence_validation = SentenceValidation()
+            sentence_validation.set_type(regex_type)
+            if sentence_validation.is_valid(sentence):
+                print(f'{sentence} is valid.')
+                sys.exit(0)
+            print(f'{sentence} is invalid')
+            sys.exit(1)
+
         print('This type is invalid.')
+        with open('./help') as file:
+            print(file.read())
+        sys.exit(1)
+
+    else:
+        with open('./help') as file:
+            print(file.read())
         sys.exit(1)
