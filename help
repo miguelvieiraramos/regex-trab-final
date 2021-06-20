@@ -4,6 +4,6 @@ Ajuda: python main.py help
 Tipos:
     even-binary: Com número par de 1s e 0s.
     twice-101: Com pelo menos duas ocorrências do padrão 101.
-    starts-with-00-and-ends-with-10: Todas as cadeias que começam com 01 e terminam com 10.
+    starts-with-01-and-ends-with-10: Todas as cadeias que começam com 01 e terminam com 10.
     any-binary-sequence: Com qualquer cadeia de entrada.
     0110-and-1001: As cadeias 0110 e 1001
