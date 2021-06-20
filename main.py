@@ -6,7 +6,8 @@ class SentenceValidation:
     regular_expressions = {
         'even-binary': '^([01]{2})*$',
         'twice-101': '(.*101){2}',
-        'starts-ends-with': '^01[01]*10$'
+        'starts-ends-with': '^01[01]*10$',
+        'any-binary-sequence': '^[01]*$'
     }
 
     def __init__(self):
