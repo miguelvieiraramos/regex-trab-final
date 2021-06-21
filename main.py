@@ -4,10 +4,10 @@ import sys
 
 class SentenceValidation:
     regular_expressions = {
-        'even-binary': '^([01]{2})*$',
+        'even-binary': '^([01]{2}){2,}$',
         'twice-101': '([01]*(101)[01]*){2,}',
         'starts-with-01-and-ends-with-10': '^01[01]*10$',
-        'any-binary-sequence': '^[01]*$',
+        'any-binary-sequence': '^[01]{1,}$',
         '0110-and-1001': '^(0110|1001)$'
     }
 
